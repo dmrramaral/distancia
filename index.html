@@ -13,41 +13,57 @@
         crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body style=" overflow: hidden">
+
+    <div class="container"
+        style="border-color: black;border: 10px; width:100vh; height:100vh; padding-top: 10%; margin-bottom: 20%; background-color: rgb(118, 199, 118);">
+        <div class="container col-10">
+            <div style="font-weight: bold;"> Informe a distância entre as cidade e selecione o tipo de transporte</div>
+            <div class="mb-3 mt-3">
+                <label for="exampleFormControlInput1" class="form-label">Distância</label>
+                <input type="number" class="form-control" id="distancia"
+                    placeholder="Insira a distância somente em número">
+            </div>
+
+            <!--   <select id="selecione" class="form-select" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select> -->
 
 
 
-    <div class="container col-8">
-        <div> Informe a distância entre as cidade e selecione o tipo de transporte</div>
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Distância</label>
-            <input type="number" class="form-control" id="distancia"
-                placeholder="Insira a distancia somente em numero">
+            <button onclick="calcularAereo()" class="btn btn-primary">Calcular Aéreo</button>
+            <button onclick="calcularRodoviario()" class="btn btn-primary">Calcular Rodoviário</button>
+
+
         </div>
 
-         
-        <br>
-        <button onclick="calcularAereo()" class="btn btn-primary">Calcular Aéreo</button>
-        <button onclick="calcularRodoviario()" class="btn btn-primary">Calcular Rodoviário</button>
-
-
+        <div class="container col-8">O valor da passagem é de R$: <span></span></div>
     </div>
-    
-    <div class="container col-8">O valor da passagem é de R$: <span></span></div>
+
+
 
     <script>
         var distancia = document.querySelector('#distancia')
         var tipoTransporte = document.querySelector('#tipoDistancia')
         var resultado = document.querySelector('span')
-        function calcularAereo(){
+        var selecione = document.getElementById('selecione')
+        function calcularAereo() {
             resultado.innerHTML = distancia.value * 0.48
+            console.log(selecione.value)
 
         }
-        function calcularRodoviario(){
+        function calcularRodoviario() {
             resultado.innerHTML = distancia.value * 0.35
 
 
         }
+        console.log(selecione.value)
+
+
+
 
     </script>
 
