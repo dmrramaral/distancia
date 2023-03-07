@@ -51,13 +51,19 @@
         var resultado = document.querySelector('span')
         var selecione = document.getElementById('selecione')
         function calcularAereo() {
-            resultado.innerHTML = distancia.value * 0.48
-            console.log(selecione.value)
+            const valor = resultado.innerHTML = distancia.value * 0.48
+
+            const formato = Math.round(valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }), -2)
+
+            return formato
 
         }
         function calcularRodoviario() {
-            resultado.innerHTML = distancia.value * 0.35
+            const valor = resultado.innerHTML = distancia.value * 0.35
 
+            const formato = Math.round(valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }), -2)
+
+            return formato
 
         }
         console.log(selecione.value)
